@@ -1,0 +1,12 @@
+<div *ngIf="paginateMovies">
+  <ul>
+    <li *ngFor="let movie of paginateMovies.results">{{ movie.original_title }}</li>
+  </ul>
+</div>
+
+
+
+
+<button (click)="getMovies(4)">
+  Optener pelicula
+</button>
