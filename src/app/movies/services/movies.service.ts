@@ -17,7 +17,7 @@ export class MoviesService {
 
   getMovies(pageMovie: number = 1): Observable<PaginationMovie> {
     const params = new HttpParams()
-      .set('api_key', environment.apiKeyTheMoviesdb)
+      //.set('api_key', environment.apiKeyTheMoviesdb)
       .set( 'page',  pageMovie.toString() );
     return this.http.get<PaginationMovie>(`${environment.baseUrl}/discover/movie`, { params });
   }

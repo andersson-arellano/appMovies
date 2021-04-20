@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppComponent } from './app.component';
 import { MoviesModule } from './movies/movies.module';
+import { environment } from 'src/environments/environment';
+import { SharedModule } from './shared/shared.module';
+
+
+
+// get JWT for angulat-jwt
+export function tokenGetter() {
+  return environment.tokenTheMoviesdb;
+}
 
 @NgModule({
   declarations: [
@@ -12,7 +22,14 @@ import { MoviesModule } from './movies/movies.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    MoviesModule
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: tokenGetter,
+        allowedDomains:['api.themoviedb.org']
+      }
+    }),
+    MoviesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
