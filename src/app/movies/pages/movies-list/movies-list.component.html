@@ -1,13 +1,18 @@
-<div *ngIf="paginateMovies">
-  <ul>
-    <li *ngFor="let movie of paginateMovies.results">{{ movie.original_title }}</li>
-  </ul>
+<div class="p-grid p-m-5">
+  <div class="p-col-12"
+       *ngIf="!paginateMovies; else divMov">
+    <p-message severity="info" text="Cargando peliculas" styleClass="p-mr-2"></p-message>
+  </div>
+
+<ng-template #divMov>
+  <div  class="p-grid"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        (scrolled)="onScroll()"
+        *ngFor="let page of paginateMovies">
+      <app-card-movie class="p-col-3" *ngFor="let movie of page.results" [movie]="movie"></app-card-movie>
+  </div>
+</ng-template>
 </div>
 
-<app-card-movie></app-card-movie>
 
-
-
-<button (click)="getMovies(4)">
-  Optener pelicula
-</button>

@@ -1,0 +1,11 @@
+<div class="progress-wrapper">
+  <div class="current">{{ vote_average*0.1 |percent:'0.1'}}</div>
+  <round-progress [current]="vote_average*10"
+                  [max]="100"
+                  [stroke]="25"
+                  color="url(#progressCircle1)"
+                  [responsive]="true"
+                  [animation]="'easeInOutQuart'"
+                  [animationDelay]="100"
+                  ></round-progress>
+</div>

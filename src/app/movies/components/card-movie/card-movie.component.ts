@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Result } from '../../interfaces/movie.interface';
 
 @Component({
   selector: 'app-card-movie',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardMovieComponent implements OnInit {
 
+  @Input() movie!: Result;
+
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  getImg( img: string ){
+    return `https://image.tmdb.org/t/p/original/${img}`
   }
 
 }

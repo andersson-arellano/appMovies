@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppComponent } from './app.component';
-import { MoviesModule } from './movies/movies.module';
 import { environment } from 'src/environments/environment';
 import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -28,7 +28,7 @@ export function tokenGetter() {
         allowedDomains:['api.themoviedb.org']
       }
     }),
-    MoviesModule,
+    AppRoutingModule,
     SharedModule
   ],
   providers: [],

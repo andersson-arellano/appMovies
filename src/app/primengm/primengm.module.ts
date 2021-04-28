@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 
 import {MenubarModule} from 'primeng/menubar';
 import {CardModule} from 'primeng/card';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+
 
 
 
 @NgModule({
   exports:[
     CardModule,
-    MenubarModule
+    MenubarModule,
+    MessageModule,
+    MessagesModule
   ]
 })
 export class PrimengmModule { }

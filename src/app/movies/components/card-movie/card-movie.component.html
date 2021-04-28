@@ -1,13 +1,10 @@
-<div class="p-grid">
-  <div class="col-5">
-    <p-card>
-      <ng-template pTemplate="header">
-          Header content here
-      </ng-template>
-      Body Content
-      <ng-template pTemplate="footer">
-          Footer content here
-      </ng-template>
-    </p-card>
-  </div>
-</div>
+<p-card [header]="movie.title" [subheader]="movie.release_date.toString()"
+  styleClass="p-card-shadow">
+  <ng-template pTemplate="header">
+    <img alt="Card" [src]="getImg(movie.poster_path)">
+  </ng-template>
+  <ng-template pTemplate="content" class="content-card">
+    <p>Coteo de votos: <strong>{{ movie.vote_count | number }}</strong></p>
+    <app-ranking-bar [vote_average]="movie.vote_average"></app-ranking-bar>
+  </ng-template>
+</p-card>
