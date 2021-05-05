@@ -8,13 +8,21 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { PrimengmModule } from './../primengm/primengm.module';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { RankingBarComponent } from './components/ranking-bar/ranking-bar.component';
+import { AboutComponent } from './pages/about/about.component';
+import { SeriesListComponent } from './pages/series-list/series-list.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
     MoviesListComponent,
     CardMovieComponent,
-    RankingBarComponent
+    RankingBarComponent,
+    AboutComponent,
+    SeriesListComponent,
+    CardListComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

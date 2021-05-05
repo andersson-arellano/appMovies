@@ -11,13 +11,11 @@ export class MoviesListComponent implements OnInit {
 
   paginateMovies: PaginationMovie[]=[];
   pageInit: number = 1;
-  finishPage = 6;
   actualPage = 1;
 
   constructor(
     private moviesServices: MoviesService
   ) {
-
 
   }
 
@@ -29,21 +27,13 @@ export class MoviesListComponent implements OnInit {
     this.moviesServices.getMovies(page)
       .subscribe( paginateMovies => {
         this.paginateMovies.push(paginateMovies);
-        console.log(this.paginateMovies);
       } );
   }
 
-  addMoviesPage(){
-    this.actualPage = this.paginateMovies.length+1;
+  addPageMovie( pageActual: string){
+    this.actualPage = Number(pageActual) + 1;
     this.getMovies(this.actualPage);
   }
 
-  onScroll(){
-    if( this.actualPage < this.finishPage ){
-      this.addMoviesPage()
-    }else{
-      console.log('finalizo');
-    }
-  }
 
 }

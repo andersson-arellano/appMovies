@@ -1,4 +1,4 @@
-<p-card [header]="movie.title" [subheader]="movie.release_date.toString()"
+<p-card [header]="(movie.title !== undefined)? movie.title!:movie.name!" [subheader]="(movie.release_date !== undefined)? movie.release_date!.toString():movie.first_air_date!.toString()"
   styleClass="p-card-shadow">
   <ng-template pTemplate="header">
     <img alt="Card" [src]="getImg(movie.poster_path)">

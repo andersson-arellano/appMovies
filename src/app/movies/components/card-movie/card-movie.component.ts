@@ -17,6 +17,7 @@ export class CardMovieComponent implements OnInit {
   }
 
   getImg( img: string ){
+    if( img === null ) return 'assets/imagen-no-encontrada.png';
     return `https://image.tmdb.org/t/p/original/${img}`
   }
 

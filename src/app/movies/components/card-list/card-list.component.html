@@ -1,0 +1,10 @@
+<div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+  <p-scrollTop></p-scrollTop>
+  <p-scrollPanel>
+    <div class="p-grid" *ngFor="let page of paginateMovies">
+      <app-card-movie class="p-col-12 p-md-6 p-lg-3" *ngFor="let movie of page.results" [movie]="movie">
+      </app-card-movie>
+    </div>
+    <p-scrollTop target="parent" [threshold]="100" icon="pi pi-arrow-up"></p-scrollTop>
+  </p-scrollPanel>
+</div>

@@ -6,18 +6,22 @@ export interface PaginationMovie {
 }
 
 export interface Result {
-  adult:             boolean;
+  adult?:             boolean;
   backdrop_path:     string;
   genre_ids:         number[];
   id:                number;
   original_language: string;
-  original_title:    string;
+  original_title?:    string;
   overview:          string;
   popularity:        number;
   poster_path:       string;
-  release_date:      Date;
+  release_date?:      Date;
   title:             string;
   video:             boolean;
   vote_average:      number;
   vote_count:        number;
+  name?:             string;
+  origin_country?: string[];
+  original_name?:    string;
+  first_air_date?:   Date;
 }

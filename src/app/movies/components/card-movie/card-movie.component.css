@@ -1,8 +1,17 @@
 app-ranking-bar{
   position: relative;
   z-index: 200;
-  bottom: 70px;
+  bottom: 65px;
   right: 0px;
   left: 180px;
 }
+
+@media (max-width: 425px) {
+  app-ranking-bar{
+    bottom: 20px;
+    left: 150px;
+  }
+ }
+
+
 

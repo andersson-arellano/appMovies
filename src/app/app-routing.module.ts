@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'movies',
+    path:'',
     loadChildren: () => import('./movies/movies.module').then( m => m.MoviesModule)
   },
   {
-    path: '**', redirectTo: 'movies'
+    path: '**', redirectTo: ''
   }
 ];
 

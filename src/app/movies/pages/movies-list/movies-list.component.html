@@ -1,18 +1,12 @@
-<div class="p-grid p-m-5">
-  <div class="p-col-12"
-       *ngIf="!paginateMovies; else divMov">
+<div class="p-grid p-ml-1">
+  <div class="p-col-12" *ngIf="paginateMovies.length === 0; else divMov">
+    <div class="p-d-flex p-jc-center">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
     <p-message severity="info" text="Cargando peliculas" styleClass="p-mr-2"></p-message>
   </div>
 
-<ng-template #divMov>
-  <div  class="p-grid"
-        infiniteScroll
-        [infiniteScrollDistance]="2"
-        (scrolled)="onScroll()"
-        *ngFor="let page of paginateMovies">
-      <app-card-movie class="p-col-3" *ngFor="let movie of page.results" [movie]="movie"></app-card-movie>
-  </div>
-</ng-template>
+  <ng-template #divMov>
+    <app-card-list [paginateMovies]="paginateMovies" (addPage)="addPageMovie($event)"></app-card-list>
+  </ng-template>
 </div>
-
-

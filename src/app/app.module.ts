@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from "@auth0/angular-jwt";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -29,7 +30,8 @@ export function tokenGetter() {
       }
     }),
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
