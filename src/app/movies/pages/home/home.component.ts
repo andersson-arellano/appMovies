@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.movie = this.paginateMovies[0].results.slice(postActual,postActual+5);
   }
 
+
   startTimer(){
     const source = timer(6000,2000);
     this.subscription = source.subscribe(val =>{
