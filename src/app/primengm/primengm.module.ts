@@ -9,6 +9,7 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ScrollTopModule} from 'primeng/scrolltop';
 import { ScrollPanelModule } from "primeng/scrollpanel";
 import {TabMenuModule} from 'primeng/tabmenu';
+import {SplitterModule} from 'primeng/splitter';
 
 
 
@@ -22,7 +23,8 @@ import {TabMenuModule} from 'primeng/tabmenu';
     ProgressSpinnerModule,
     ScrollTopModule,
     ScrollPanelModule,
-    TabMenuModule
+    TabMenuModule,
+    SplitterModule
   ]
 })
 export class PrimengmModule { }

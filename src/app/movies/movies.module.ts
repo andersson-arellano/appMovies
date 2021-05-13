@@ -12,6 +12,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { SeriesListComponent } from './pages/series-list/series-list.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MenuMoviesComponent } from './components/menu-movies/menu-movies.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HomeComponent } from './pages/home/home.component';
     AboutComponent,
     SeriesListComponent,
     CardListComponent,
-    HomeComponent
+    HomeComponent,
+    MenuMoviesComponent
   ],
   imports: [
     CommonModule,
